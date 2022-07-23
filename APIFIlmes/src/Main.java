@@ -1,5 +1,7 @@
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -19,11 +21,23 @@ public class Main {
         JsonParser parser = new JsonParser();
         List<Map<String, String>> listaDeFilmes = parser.parse(body);
 
+        StickersMaker maker = new StickersMaker();
+
         for (Map<String, String> filme : listaDeFilmes){
-            System.out.println(filme.get("title"));
-            System.out.println(filme.get("image"));
-            System.out.println(filme.get("imDbRating"));
-            System.out.println();
+
+            String frase = "ESSE É TOP";
+            int endIndex = filme.get("image").lastIndexOf("@");
+            String urlImagem = filme.get("image").substring(0, endIndex+1) + ".jpg";
+            String titulo = filme.get("title");
+
+            InputStream inputStream = new URL(urlImagem).openStream();
+            String nomeArquivo = "out/figurinhas/" + titulo + ".png";
+
+            maker.cria(inputStream, nomeArquivo, frase);
+
+            System.out.println(titulo);
+            System.out.println(urlImagem);
+
         }
     }
 }
