@@ -24,8 +24,8 @@ public class StickersMaker {
 
 
         // configurar a fonte
-        Font fonte = new Font(Font.SANS_SERIF, Font.BOLD, 80);
-        graphics.setColor(Color.YELLOW);
+        Font fonte = new Font(Font.SANS_SERIF, Font.BOLD, 100);
+        graphics.setColor(Color.RED);
         graphics.setFont(fonte);
 
         // escrever um frase na nova imagem

@@ -23,12 +23,12 @@ public class Main {
 
         StickersMaker maker = new StickersMaker();
 
-        for (Map<String, String> filme : listaDeFilmes){
+        for (Map<String, String> filme : listaDeFilmes) {
 
-            String frase = "ESSE É TOP";
-            int endIndex = filme.get("image").lastIndexOf("@");
-            String urlImagem = filme.get("image").substring(0, endIndex+1) + ".jpg";
             String titulo = filme.get("title");
+            String frase = "ESSE É TOP";
+            int endIndex = filme.get("image").indexOf("_");
+            String urlImagem = filme.get("image").substring(0, endIndex - 1) + ".jpg";
 
             InputStream inputStream = new URL(urlImagem).openStream();
             String nomeArquivo = "out/figurinhas/" + titulo + ".png";
