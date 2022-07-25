@@ -8,6 +8,8 @@ public class Main {
 
         System.out.println("Para usar a API do IMDB, digite: 1.");
         System.out.println("Para usar a API da Nasa, digite: 2.");
+        System.out.println("Para usar a API de Linguagens, digite: 3.");
+
 
         Scanner entrada = new Scanner(System.in);
         int escolha = entrada.nextInt();
@@ -26,6 +28,11 @@ public class Main {
                 url = "https://api.nasa.gov/planetary/apod?api_key=gsaqohWW65PlcpWa4BxLsSWrva0ONy0plFnHKzsi&start_date=2021-11-02&end_date=2022-01-30";
                 extrator = new ExtratorDeConteudoDaNasa();
                 frase = "FOTO TOP";
+            }
+            case 3 -> {
+                url = "http://localhost:8080/linguagens";
+                extrator = new ExtratorDeConteudoDeLinguagens();
+                frase = "IHA";
             }
         }
 
