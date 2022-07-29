@@ -17,22 +17,26 @@ public class Main {
         String url = "";
         ExtratorDeConteudo extrator = json -> null;
         String frase = "";
+        int limit = 0;
 
         switch (escolha) {
             case 1 -> {
                 url = "https://alura-filmes.herokuapp.com/conteudos";
                 extrator = new ExtratorDeConteudoDoIMDB();
                 frase = "FILME TOP";
+                limit = 10;
             }
             case 2 -> {
                 url = "https://api.nasa.gov/planetary/apod?api_key=gsaqohWW65PlcpWa4BxLsSWrva0ONy0plFnHKzsi&start_date=2021-11-02&end_date=2022-01-30";
                 extrator = new ExtratorDeConteudoDaNasa();
                 frase = "FOTO TOP";
+                limit = 6;
             }
             case 3 -> {
-                url = "http://localhost:8080/linguagens";
+                url = "https://jgmarquesm-linguagens-api.herokuapp.com/linguagens";
                 extrator = new ExtratorDeConteudoDeLinguagens();
                 frase = "IHA";
+                limit = 11;
             }
         }
 
@@ -43,7 +47,7 @@ public class Main {
 
         StickersMaker maker = new StickersMaker();
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < limit; i++) {
 
             Conteudo conteudo = conteudos.get(i);
 
