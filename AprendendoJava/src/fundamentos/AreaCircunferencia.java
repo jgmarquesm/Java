@@ -11,8 +11,8 @@ public class AreaCircunferencia {
 
         System.out.println("Qual o valor do raio? ");
         float raio = entrada.nextFloat();
-        final double PI = 3.141592;
-        double area = PI * raio * raio;
+        final float PI = 3.141592F;
+        float area = PI * raio * raio;
 
         System.out.printf(Locale.ITALY, "A área do círculo é: %3.2f m^2", area);
 
