@@ -1,4 +1,4 @@
-package fundamentos;
+package fundamentos.tipodedados;
 
 import java.util.Locale;
 

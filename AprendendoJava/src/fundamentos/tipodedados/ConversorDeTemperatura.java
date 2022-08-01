@@ -1,4 +1,4 @@
-package fundamentos;
+package fundamentos.tipodedados;
 
 public class ConversorDeTemperatura {
     public static void main(String[] args) {

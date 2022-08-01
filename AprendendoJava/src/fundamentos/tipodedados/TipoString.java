@@ -1,4 +1,4 @@
-package fundamentos;
+package fundamentos.tipodedados;
 
 public class TipoString {
 
@@ -28,9 +28,19 @@ public class TipoString {
         String frase = String.format("O senhor %s %s tem %d anos.", nome, sobrenome, idade);
         System.out.println(frase);
 
-        System.out.printf("O senhor %s %s tem %d anos", nome, sobrenome, idade);
+        System.out.printf("O senhor %s %s tem %d anos.%n", nome, sobrenome, idade);
 
         // Para uma lista com todos os métodos contidos na Classe String pode acessar:
         // https://www.w3schools.com/java/java_ref_string.asp ou a documentação oficial.
+
+        // Para fazer comparação entre Strings é melhor usar o método equals() ao invés de ==.
+        String test = "João";
+        String test2 = new String("João");
+        System.out.println(test == test2);
+        System.out.println(test.equals(test2));
+        System.out.println(test == "João");
+        System.out.println(test.equals("João"));
+        System.out.println("João" == test2);
+        System.out.println("João".equals(test2));
     }
 }
