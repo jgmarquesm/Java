@@ -1,4 +1,4 @@
-package fundamentos.estruturasdecontrole;
+package estruturasdecontrole;
 
 public class For {
     public static void main(String[] args) {

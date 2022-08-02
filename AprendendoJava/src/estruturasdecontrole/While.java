@@ -1,4 +1,4 @@
-package fundamentos.estruturasdecontrole;
+package estruturasdecontrole;
 
 import java.util.Scanner;
 
